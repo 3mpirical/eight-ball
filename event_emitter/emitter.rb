@@ -31,7 +31,7 @@ class Event_Emitter
 
     def initialize()
         @listener_hash = {}
-        @default_block = nil
+        @default_block = []
     end
 
     def add(string, &block)
@@ -47,7 +47,7 @@ class Event_Emitter
     end
 
     def add_default(&block)
-        @default_block = block
+        @default_block.push(block)
     end
 
     def emit(string)
@@ -59,7 +59,7 @@ class Event_Emitter
                 }
                 return true
             else
-                @default_block.each {|item| item.call(event) } if(@default_block)
+                @default_block.each {|item| item.call(event) } if(@default_block.length > 0)
                 return false
             end
         else
@@ -70,12 +70,24 @@ end
 
 class Routes
     def self.init(emitter)
-        require "./event_emitter/routes/_hello"
-        hello(emitter)
+        require "./event_emitter/routes/_menu"
+        menu(emitter)
         require "./event_emitter/routes/_default"
         default(emitter)
         require "./event_emitter/routes/_exit"
         exit(emitter)
+        require "./event_emitter/routes/_ask"
+        ask(emitter)
+        require "./event_emitter/routes/_add"
+        add(emitter)
+        require "./event_emitter/routes/_reset"
+        reset(emitter)
+        require "./event_emitter/routes/_remove"
+        remove(emitter)
+        require "./event_emitter/routes/_show"
+        show(emitter)
+        require "./event_emitter/routes/_history"
+        history(emitter)
     end
 end
 
