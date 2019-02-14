@@ -1,4 +1,3 @@
-## Prefer to make this a class in ruby ##
 
 class State
     @exit = false
