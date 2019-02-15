@@ -1,4 +1,4 @@
-def remove(emitter)
+remove = -> {
     ##### ABSTRACTED FUNCS #####
     def remove_answer
         View.display_answers()
@@ -19,8 +19,9 @@ def remove(emitter)
     end
 
     ##### EVENT LISTENERS #####
-    emitter.add("remove answer") {|event| remove_answer()}
-    emitter.add("remove") {|event| remove_answer()}
-    emitter.add("rem") {|event| remove_answer()}
-    emitter.add("-rem") {|event| remove_answer()}
-end
+    @emitter.add("remove answer") {|event| remove_answer()}
+    @emitter.add("remove") {|event| remove_answer()}
+    @emitter.add("rem") {|event| remove_answer()}
+    @emitter.add("-rem") {|event| remove_answer()}
+
+}.()

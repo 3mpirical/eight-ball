@@ -1,5 +1,5 @@
 
-def add(emitter)
+add = -> {
     ##### ABSTRACTED FUNCS #####
     def handle_new_answer
         print("\nWhat is your answer?) ")
@@ -18,7 +18,8 @@ def add(emitter)
     end
 
     ##### EVENT LISTENERS #####
-    emitter.add("add answer") {|event| handle_new_answer()}
-    emitter.add("add") {|event| handle_new_answer()}
-    emitter.add("-add") {|event| handle_new_answer()}
-end
+    @emitter.add("add answer") {|event| handle_new_answer()}
+    @emitter.add("add") {|event| handle_new_answer()}
+    @emitter.add("-add") {|event| handle_new_answer()}
+
+}.()

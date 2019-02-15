@@ -1,15 +1,16 @@
-def menu(emitter)
+menu = -> {
     ##### ABSTRACTED FUNCS #####
-    def handle_menu(emitter)
+    def handle_menu()
         View.menu_display()
-        View.get_emit_input(emitter)
+        View.get_emit_input(@emitter)
     end
 
     ##### EVENT LISTENERS #####
-    emitter.add("menu") {|event| handle_menu(emitter)}
-    emitter.add("m") {|event| handle_menu(emitter)}
-    emitter.add("-m") {|event| handle_menu(emitter)}
-    emitter.add("help") {|event| handle_menu(emitter)}
-    emitter.add("h") {|event| handle_menu(emitter)}
-    emitter.add("-h") {|event| handle_menu(emitter)}
-end
+    @emitter.add("menu") {|event| handle_menu()}
+    @emitter.add("m") {|event| handle_menu()}
+    @emitter.add("-m") {|event| handle_menu()}
+    @emitter.add("help") {|event| handle_menu()}
+    @emitter.add("h") {|event| handle_menu()}
+    @emitter.add("-h") {|event| handle_menu()}
+
+}.()

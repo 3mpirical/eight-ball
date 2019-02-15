@@ -1,4 +1,4 @@
-def ask(emitter)
+ask = -> {
     ##### ABSTRACTED FUNCS #####
     def handle_question(event)
         print "Input Question:  "
@@ -21,7 +21,8 @@ def ask(emitter)
     end
 
     ##### EVENT LISTENERS #####
-    emitter.add("ask") {|event| handle_question(event)}
-    emitter.add("a") {|event| handle_question(event)}
-    emitter.add("-a") {|event| handle_question(event)}
-end
+    @emitter.add("ask") {|event| handle_question(event)}
+    @emitter.add("a") {|event| handle_question(event)}
+    @emitter.add("-a") {|event| handle_question(event)}
+
+}.()

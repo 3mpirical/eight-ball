@@ -1,6 +1,5 @@
-def reset(emitter)
+reset = -> {
     ##### ABSTRACTED FUNCS #####
-
     def reset_answers
         puts("\nDo you really want to reset all answers?")
         while(true)
@@ -26,8 +25,9 @@ def reset(emitter)
     end
 
     ##### EVENT LISTENERS #####
-    emitter.add("reset answers") {|event| reset_answers()}
-    emitter.add("reset") {|event| reset_answers()}
-    emitter.add("-res") {|event| reset_answers()}
-    emitter.add("res") {|event| reset_answers()}
-end
+    @emitter.add("reset answers") {|event| reset_answers()}
+    @emitter.add("reset") {|event| reset_answers()}
+    @emitter.add("-res") {|event| reset_answers()}
+    @emitter.add("res") {|event| reset_answers()}
+
+}.()

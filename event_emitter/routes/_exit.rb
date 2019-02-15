@@ -1,4 +1,4 @@
-def exit(emitter)
+exit = -> {
     ##### ABSTRACTED FUNCS #####
     def quit_application
         puts("\n:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:")
@@ -9,6 +9,7 @@ def exit(emitter)
     end
 
     ##### EVENT LISTENERS #####
-    emitter.add("exit") {|event| quit_application()}
-    emitter.add("quit") {|event| quit_application()}
-end
+    @emitter.add("exit") {|event| quit_application()}
+    @emitter.add("quit") {|event| quit_application()}
+
+}.()
