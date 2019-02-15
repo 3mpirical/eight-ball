@@ -6,7 +6,6 @@ def remove(emitter)
         print("\nNumber) ")
         answer = gets.strip().to_i
         num_of_cur_answers = Model.get_answers().length
-        puts num_of_cur_answers
         if(answer > num_of_cur_answers || answer < 1)
             puts("\n:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*::*:*:*:*:")
             puts("         That number is not an option")
