@@ -2,7 +2,6 @@ require("./model")
 require("./view")
 require("./state")
 require("./event_emitter/emitter")
-require("colorize")
 
 ##### CONTROLLER #####
 class Controller
