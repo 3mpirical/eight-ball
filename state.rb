@@ -2,7 +2,7 @@
 class State
     @exit = false
 
-    def self.get_exit()
+    def self.exited?()
         return @exit
     end
     

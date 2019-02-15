@@ -7,7 +7,7 @@ require("./event_emitter/emitter")
 class Controller
     def self.init_eight_ball(emitter)
         View.menu_display()
-        while(!State.get_exit())
+        while(!State.exited?())
             View.get_emit_input(emitter)
         end
     end
