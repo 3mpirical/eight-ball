@@ -5,7 +5,7 @@ class View
         puts("(<8>)         MAGIC EIGHT BALL           (<8>)")
         puts("==============================================")
         puts("menu/help ---------------> shows other options")
-        puts("(m, -m, h, -h)")
+        puts("m, -m, h, -h")
         puts("")
         puts("ask ----------------> inputs a question to ask")
         puts("a, -a")
