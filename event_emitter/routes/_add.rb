@@ -19,4 +19,7 @@ def add(emitter)
 
     ##### EVENT LISTENERS #####
     emitter.add("add answer") {|event| handle_new_answer()}
+    emitter.add("add") {|event| handle_new_answer()}
+    emitter.add("-add") {|event| handle_new_answer()}
+    emitter.add("--add") {|event| handle_new_answer()}
 end

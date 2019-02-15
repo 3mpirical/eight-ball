@@ -7,5 +7,9 @@ def menu(emitter)
 
     ##### EVENT LISTENERS #####
     emitter.add("menu") {|event| handle_menu(emitter)}
+    emitter.add("m") {|event| handle_menu(emitter)}
+    emitter.add("-m") {|event| handle_menu(emitter)}
     emitter.add("help") {|event| handle_menu(emitter)}
+    emitter.add("h") {|event| handle_menu(emitter)}
+    emitter.add("-h") {|event| handle_menu(emitter)}
 end

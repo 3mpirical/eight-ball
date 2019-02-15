@@ -22,4 +22,6 @@ def ask(emitter)
 
     ##### EVENT LISTENERS #####
     emitter.add("ask") {|event| handle_question(event)}
+    emitter.add("a") {|event| handle_question(event)}
+    emitter.add("-a") {|event| handle_question(event)}
 end

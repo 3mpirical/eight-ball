@@ -27,4 +27,7 @@ def reset(emitter)
 
     ##### EVENT LISTENERS #####
     emitter.add("reset answers") {|event| reset_answers()}
+    emitter.add("reset") {|event| reset_answers()}
+    emitter.add("-res") {|event| reset_answers()}
+    emitter.add("res") {|event| reset_answers()}
 end

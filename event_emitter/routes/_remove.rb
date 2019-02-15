@@ -21,4 +21,7 @@ def remove(emitter)
 
     ##### EVENT LISTENERS #####
     emitter.add("remove answer") {|event| remove_answer()}
+    emitter.add("remove") {|event| remove_answer()}
+    emitter.add("r") {|event| remove_answer()}
+    emitter.add("-r") {|event| remove_answer()}
 end
