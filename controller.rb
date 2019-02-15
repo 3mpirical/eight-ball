@@ -15,8 +15,17 @@ end
 
 
 ####### EXECUTION #######
-emitter = Event_Emitter.new()
-Routes.init(emitter)
-Controller.init_eight_ball(emitter)
+@emitter = Event_Emitter.new()
+@emitter.init_routes("./event_emitter/routes/_menu")
+@emitter.init_routes("./event_emitter/routes/_default")
+@emitter.init_routes("./event_emitter/routes/_exit")
+@emitter.init_routes("./event_emitter/routes/_ask")
+@emitter.init_routes("./event_emitter/routes/_add")
+@emitter.init_routes("./event_emitter/routes/_reset")
+@emitter.init_routes("./event_emitter/routes/_remove")
+@emitter.init_routes("./event_emitter/routes/_show")
+@emitter.init_routes("./event_emitter/routes/_history")
+
+Controller.init_eight_ball(@emitter)
 
 

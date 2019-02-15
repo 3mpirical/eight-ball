@@ -25,7 +25,6 @@ module Event
     end
 end
 
-# p Event
 class Event_Emitter
     include Event
 
@@ -42,7 +41,7 @@ class Event_Emitter
                 @listener_hash[string.to_sym] = [block]
             end
         else
-            raise("ERROR: addListener was passed #{string.inspect}, not a string")
+            raise("ERROR: 'add()' was passed #{string.inspect}, not a string")
         end
     end
 
@@ -63,32 +62,11 @@ class Event_Emitter
                 return false
             end
         else
-            raise("ERROR: emitEvent was passed #{string.inspect}, not a string")
+            raise("ERROR: 'emit()' was passed #{string.inspect}, not a string")
         end
     end
-end
 
-class Routes
-    def self.init(emitter)
-        require "./event_emitter/routes/_menu"
-        menu(emitter)
-        require "./event_emitter/routes/_default"
-        default(emitter)
-        require "./event_emitter/routes/_exit"
-        exit(emitter)
-        require "./event_emitter/routes/_ask"
-        ask(emitter)
-        require "./event_emitter/routes/_add"
-        add(emitter)
-        require "./event_emitter/routes/_reset"
-        reset(emitter)
-        require "./event_emitter/routes/_remove"
-        remove(emitter)
-        require "./event_emitter/routes/_show"
-        show(emitter)
-        require "./event_emitter/routes/_history"
-        history(emitter)
+    def init_routes(route_string)
+        require(route_string)
     end
 end
-
-##### EXECUTION #####
