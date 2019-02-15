@@ -11,7 +11,7 @@ class View
         puts("a, -a")
         puts("")
         puts("add answer --------> adds a new answer to list")
-        puts("add, -add, --add")
+        puts("add, -add")
         puts("")
         puts("remove answer ------> delete a possible answer")
         puts("remove, rem, -rem")
